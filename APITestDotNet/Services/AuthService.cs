@@ -89,6 +89,7 @@ namespace TestMandiri.Services
 
         public string GenerateJwtToken(string username)
         {
+            try{
             var claims = new[]
             {
             new Claim(ClaimTypes.Name, username),
@@ -107,6 +108,12 @@ namespace TestMandiri.Services
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.LogError(nameof(GenerateJwtToken), ex);
+                return "login gagal tolong hubungi support";
+            }
         }
 
 
