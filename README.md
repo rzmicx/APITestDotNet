@@ -1,6 +1,6 @@
 berikut adalah bagian untuk API
 
-untuk development jangan lupa ubah file appsetting.json
+untuk development jangan lupa ubah file appsetting.json untuk settingan redis dan database 
 jika code ini mau dijalankan langsung bisa di run di visual studio
 jika ingin di deploy:
 1, Publish project ini as a folder 
