@@ -20,11 +20,11 @@ namespace APITestDotNet.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromQuery] string username, string password)
+        public IActionResult Login([FromForm] LoginModel login)
         {
-            var result = _authService.Login(username, password);
+            var result = _authService.Login(login.username, login.password);
             if (result == "Login berhasil.") {
-                var token = _authService.GenerateJwtToken(username);
+                var token = _authService.GenerateJwtToken(login.username);
                 return Ok(new {token });
             }
             return BadRequest(new { message = result });
