@@ -48,7 +48,7 @@ namespace APITestDotNet.Controllers
             return BadRequest(new { message = hasil.Result });
         }
 
-        [HttpPost("ViewGrid")]
+        [HttpGet("ViewGrid")]
         public async Task<IActionResult> ViewGrid([FromQuery] string type,string? orderby)
         {
             try

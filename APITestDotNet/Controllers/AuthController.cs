@@ -20,7 +20,7 @@ namespace APITestDotNet.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromForm] LoginModel login)
+        public IActionResult Login([FromBody] LoginModel login)
         {
             var result = _authService.Login(login.username, login.password);
             if (result == "Login berhasil.") {
@@ -31,7 +31,7 @@ namespace APITestDotNet.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromForm] RegisUser model)
+        public async Task<IActionResult> Register([FromBody] RegisUser model)
         {
             try
             {
