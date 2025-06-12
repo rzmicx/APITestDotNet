@@ -1,0 +1,6 @@
+@APITestDotNet_HostAddress = http://localhost:5130
+
+GET {{APITestDotNet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
